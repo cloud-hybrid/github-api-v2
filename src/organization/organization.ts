@@ -120,6 +120,4 @@ class Organization implements Type {
 
 export { Organization };
 
-export type { Type }
-
 export default { Organization };

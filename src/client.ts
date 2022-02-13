@@ -1,3 +1,5 @@
+import Process from "process";
+
 import REST, { Octokit } from "@octokit/rest";
 
 import { Debugger } from "./debugger";
@@ -8,13 +10,15 @@ type REST = RestEndpointMethods;
 
 import { Interface } from "./interface";
 
+/// import { paginateRest, composePaginateRest, } from "@octokit/plugin-paginate-rest";
+
 /*** REST API Client */
 class Client {
     /*** API Interface */
     public readonly interface: Interface;
 
-    private static agent = "Cloud-Technology API User Agent";
-    private static token = "";
+    private static agent = "Cloud-Technology API";
+    private static token = Process.env["TOKEN"];
     private static base = "https://api.github.com";
 
     private constructor(debug: "debug" | "info" | "warn" | "error") {
@@ -38,7 +42,5 @@ type Type = typeof API;
 const API = Client.initialize();
 
 export { API, Client };
-
-export type { Type };
 
 export default API;

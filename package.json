@@ -7,7 +7,12 @@
     "scripts": {
         "compile": "tsc --watch",
         "start": "node --es-module-specifier-resolution node ./src",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest --config jest.config.js",
+        "rm-js": "find . -name '*.js' -type f -delete",
+        "rm-declarations": "find . -name '*.d.ts' -type f -delete",
+        "rm-declaration-maps": "find . -name '*.d.ts.map' -type f -delete",
+        "rm-maps": "find . -name '*.js.map' -type f -delete",
+        "clean": "npm run rm-js && npm run rm-declarations && npm run rm-declaration-maps && npm run rm-maps && npm run rm-js"
     },
     "repository": {
         "type": "git",
@@ -20,14 +25,32 @@
     },
     "homepage": "https://github.com/cloud-hybrid/github-api-v2#readme",
     "dependencies": {
+        "@octokit/plugin-paginate-rest": "^2.17.0",
         "@octokit/rest": "latest"
     },
     "devDependencies": {
+        "@aws-sdk/types": "latest",
+        "@cloud-technology/secrets-manager": "latest",
+        "@jest/globals": "latest",
         "@octokit/types": "latest",
         "@types/inquirer": "latest",
-        "@types/node": "^17.0.15",
+        "@types/jest": "latest",
+        "@types/node": "latest",
+        "@types/uuid": "latest",
+        "@typescript-eslint/eslint-plugin": "latest",
+        "@typescript-eslint/experimental-utils": "latest",
+        "@typescript-eslint/parser": "latest",
+        "@typescript-eslint/scope-manager": "latest",
+        "@typescript-eslint/type-utils": "latest",
+        "@typescript-eslint/typescript-estree": "latest",
+        "@typescript-eslint/utils": "latest",
+        "eslint": "latest",
+        "jest": "latest",
+        "node-notifier": "latest",
+        "ts-jest": "latest",
         "ts-node": "latest",
         "tslib": "latest",
-        "typescript": "latest"
+        "typescript": "latest",
+        "typescript-eslint-language-service": "latest"
     }
 }

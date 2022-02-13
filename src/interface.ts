@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/rest";
 
-class Interface {
+interface API {
     request: Octokit["request"];
     graphql: Octokit["graphql"];
     log: Octokit["log"];
@@ -37,6 +37,51 @@ class Interface {
     users: Octokit["users"];
     rest: Octokit["rest"];
     paginate: Octokit["paginate"];
+}
+
+class Interface implements API {
+    request: Octokit["request"];
+    graphql: Octokit["graphql"];
+    log: Octokit["log"];
+    hook: Octokit["hook"];
+    auth: Octokit["auth"];
+    actions: Octokit["actions"];
+    activity: Octokit["activity"];
+    apps: Octokit["apps"];
+    billing: Octokit["billing"];
+    checks: Octokit["checks"];
+    codeScanning: Octokit["codeScanning"];
+    codesOfConduct: Octokit["codesOfConduct"];
+    emojis: Octokit["emojis"];
+    enterpriseAdmin: Octokit["enterpriseAdmin"];
+    gists: Octokit["gists"];
+    git: Octokit["git"];
+    gitignore: Octokit["gitignore"];
+    interactions: Octokit["interactions"];
+    issues: Octokit["issues"];
+    licenses: Octokit["licenses"];
+    markdown: Octokit["markdown"];
+    meta: Octokit["meta"];
+    migrations: Octokit["migrations"];
+    orgs: Octokit["orgs"];
+    packages: Octokit["packages"];
+    projects: Octokit["projects"];
+    pulls: Octokit["pulls"];
+    rateLimit: Octokit["rateLimit"];
+    reactions: Octokit["reactions"];
+    repos: Octokit["repos"];
+    search: Octokit["search"];
+    secretScanning: Octokit["secretScanning"];
+    teams: Octokit["teams"];
+    users: Octokit["users"];
+    rest: Octokit["rest"];
+    paginate: Octokit["paginate"];
+
+    /***
+     *
+     * @param {Octokit} octokit
+     *
+     */
 
     constructor(octokit: Octokit) {
         this.request = octokit.request;
@@ -79,5 +124,7 @@ class Interface {
 }
 
 export { Interface };
+
+export type { API };
 
 export default Interface;

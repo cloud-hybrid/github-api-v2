@@ -15,6 +15,7 @@ import { Organization } from "./organization";
  * const organization = await Organizations.initialize("cloud-hybrid");
  *
  * console.log(organization.repositories());
+ *
  */
 class Organizations extends Array {
     private constructor() {
