@@ -30,7 +30,6 @@
     },
     "devDependencies": {
         "@aws-sdk/types": "latest",
-        "@cloud-technology/secrets-manager": "latest",
         "@jest/globals": "latest",
         "@octokit/types": "latest",
         "@types/inquirer": "latest",
